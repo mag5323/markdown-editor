@@ -185,14 +185,18 @@ the inspiration to this, and some handy implementation hints, came.
       document.getElementById('out').innerHTML = marked(val);
     }
 
-    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-      mode: 'gfm',
-      lineNumbers: true,
-      matchBrackets: true,
-      lineWrapping: true,
-      theme: 'default',
-      onChange: update
-    });
+    var editor;
+    window.onload = function(){
+        editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'gfm',
+            lineNumbers: true,
+            matchBrackets: true,
+            lineWrapping: true,
+            theme: 'default',
+            onChange: update
+        });
+        update(editor);
+    };
 
     document.addEventListener('drop', function(e){
       e.preventDefault();
