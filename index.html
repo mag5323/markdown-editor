@@ -169,7 +169,6 @@ the inspiration to this, and some handy implementation hints, came.
 
     function update(e){
       var val = e.getValue();
-
       setOutput(val);
     }
 
@@ -182,7 +181,7 @@ the inspiration to this, and some handy implementation hints, came.
     }
 
     var editor;
-    window.onload = function(){
+    window.onload = function() {
         editor = CodeMirror.fromTextArea(document.getElementById('code'), {
             mode: 'gfm',
             lineNumbers: true,
