@@ -12,5 +12,6 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
   socket.on('write', function (data) {
+    socket.broadcast.emit('notify', data);
   });
 });
