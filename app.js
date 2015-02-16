@@ -9,3 +9,8 @@ server.listen(5323);
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
 });
+
+io.on('connection', function (socket) {
+  socket.on('write', function (data) {
+  });
+});
