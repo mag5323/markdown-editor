@@ -199,7 +199,9 @@ the inspiration to this, and some handy implementation hints, came.
         });
 
         editor.on('change', function(cm, change){
-            update(cm);
+            if ('setValue' !== change.origin) {
+                update(cm);
+            }
         });
         update(editor);
     };
