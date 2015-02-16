@@ -171,6 +171,7 @@ the inspiration to this, and some handy implementation hints, came.
 
     function update(e){
       var val = e.getValue();
+      socket.emit('write', val);
       setOutput(val);
     }
 
