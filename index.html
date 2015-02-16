@@ -151,6 +151,7 @@ the inspiration to this, and some handy implementation hints, came.
   <div id="out"></div>
 
   <script>
+    var socket = io.connect('http://106.186.27.178:5323');
     var URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
     navigator.saveBlob = navigator.saveBlob || navigator.msSaveBlob || navigator.mozSaveBlob || navigator.webkitSaveBlob;
     window.saveAs = window.saveAs || window.webkitSaveAs || window.mozSaveAs || window.msSaveAs;
