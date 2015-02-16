@@ -175,6 +175,11 @@ the inspiration to this, and some handy implementation hints, came.
       setOutput(val);
     }
 
+    socket.on('notify', function(data) {
+      setOutput(data);
+      editor.setValue(data);
+    });
+
     function setOutput(val){
       val = val.replace(/<equation>((.*?\n)*?.*?)<\/equation>/ig, function(a, b){
         return '<img src="http://latex.codecogs.com/png.latex?' + encodeURIComponent(b) + '" />';
